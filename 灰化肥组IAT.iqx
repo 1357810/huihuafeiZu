@@ -1,0 +1,376 @@
+﻿<item attributeAlabel>
+/1="褒义词"
+</item>
+
+<item attributeA>
+/1="聪明"
+/2="伶俐"
+/3="成功"
+/4="有价值"
+/5="高尚"
+/6="强壮"
+/7="自豪"
+/8="可爱"
+</item>
+
+<item attributeBlabel>
+/1="贬义词"
+</item>
+
+<item attributeB>
+/1="愚蠢"
+/2="丑陋"
+/3="失败"
+/4="讨厌"
+/5="无能"
+/6="卑鄙"
+/7="罪恶"
+/8="笨拙"
+</item>
+
+<item targetAlabel>
+/1="I"
+</item>
+
+
+<item targetA>
+/1="我"
+/2="我的"
+/3="自己"
+/4="自己的"
+/5="俺"
+/6="俺的"
+/7="自个"
+/8="自个的"
+</item>
+
+<item targetBlabel>
+/2="He"
+</item>
+
+
+<item targetB>
+/1="他"
+/2="他的"
+/3="人家"
+/4="人家的"
+/5="别人"
+/6="别人的"
+/7="外人"
+/8="外人的"
+</item>
+
+<instruct>
+/nextlabel = "结束"
+/lastlabel = "结束"
+/nextkey = (" ")
+/prevkey = (0)
+/inputdevice = mouse
+/windowsize = (90%,90%)
+/screencolor = (0,0,0)
+/fontstyle = ("宋体",3%)
+/txcolor = (255,255,255)
+</instruct>
+
+<page summary>
+^下面是你的平均反应时：
+^^联合任务一（相容）:"<% item.targetAlabel.1 %>"和"<% item.attributeAlabel.1 %>",
+"<% item.targetBlabel.1 %>"和"<% item.attributeBlabel.1 %>"
+平均反应时为：<%block.compatibletest.meanlatency%>毫秒
+^^联合任务二（不相容）:"<% item.targetAlabel.1 %>"和"<% item.attributeBlabel.1 %>",
+"<% item.targetBlabel.1 %>"和"<% item.attributeAlabel.1 %>"
+平均反应时为：<%block.incompatibletest.meanlatency%>毫秒
+^^非常感谢参加这个试次，请单击“继续”结束本试次。
+</page>
+
+
+
+<counter instructions>
+/resetinterval = 10
+/select = sequence(1,2,3,4,5,6,7)
+</counter>
+
+<trial instructions>
+/stimulustimes = [1=instructions,spacebar]
+/correctresponse = (" ")
+/errormessage = false
+/recorddata = false
+</trial>
+
+<text instructions>
+/items = instructions
+/ hjustify = left
+/size = (90%,60%)
+/position = (50%,85%)
+/valign = bottom
+/select = instructions
+/ fontstyle = ("宋体",3.5%)
+</text>
+
+<item instructions>
+/1="您好！请把您左右手的食指放在键盘的“E”键和“I”键上，可以看到，屏幕上方分别是褒义和贬义的两个类别，其对应的形容词会在屏幕的中间逐一显示，当屏幕中间的形容词属于屏幕左边类别的时候，请按“E”键，当属于右面类别的时候，请按“I”键。每个形容词只能归入一个类别，如果您做错的话，屏幕的中间就会出现一个X来提醒您，您只需要按另外一个键来更正错误（如果您是左手按F时出现错误，只需右手按J键即刻更正）。
+这是一个按照反应时间进行归类的任务，请尽可能快的完成任务，并且请尽可能的准确，如果您的速度过慢或者错误过多，那么所得的测验结果将因为无法解释而作废，整个实验大概会消耗您5分钟的时间(*^__^*) ）"
+/2="请注意屏幕上方，类别词已经改变为“I”或“He”，屏幕中间会显示有关类别的词语，但按键规则不变，和开始时提到的一样。
+当中间显示的是有关自己的词语时，请按“E”键，当显示的是有关他人的词语时，请按“I”键，每个词语都只能属于一个类别。当你做错时屏幕中间同样会出现X号，和上面的一样，按另外一个键即可修正错误，请尽可能快地完成"
+/3="从屏幕上方可以看到，前面您所看到的单独呈现的四个类别词现在是一起呈现的。请您依然按照前面的对应关系归类。
+和前面一样，分别按“E”键和“I”键做出反应，更正错误的方式和前面也是一样的"
+/4="重复一次上面的分类过程，请尽快，并且尽可能地保证正确率。和前面一样，分别按“E”和“I”键做出反应，更正错误的方式和前面也是一样的"
+/5="请注意上方，现在类别又变成了“I”或“He”，但和前面不同的是，它们的位置对调了，原来在右边的调到了左边，原来在左边的调到了右边，请训练一下以适应这种配置。
+反应方式和前面一样，依旧是“E”键对应左边，“I”键对应右边"
+/6="请注意上方，四个词开始一起呈现，但是呈现的方式有所改变，请您依然按照前面的对应关系分类。和前面一样，分别按“E”和“I”做出反应。更正错误的方式和前面也是一样的"
+/7="重复一次上面的归类过程，请尽快，并且尽可能地保证正确率。
+和前面一样，分别按“E”和“I”键做出反应，更正错误的方式和前面也是一样的"
+</item>
+
+<text spacebar>
+/items = ("如果您清楚上面的含义，请按空格开始实验，否则可让实验员帮忙")
+/position = (50%,95%)
+/valign = bottom
+/fontstyle = ("宋体",3.5%)
+</text>
+
+<text attributeA>
+/items=attributeA
+/txcolor=(0,255,0)
+</text>
+
+<text attributeB>
+/items=attributeB
+/txcolor=(0,255,0)
+</text>
+
+<text targetA>
+/items=targetA
+/txcolor=(0,255,0)
+</text>
+
+<text targetB>
+/items=targetB
+/txcolor=(0,255,0)
+</text>
+
+<text error>
+/position = (50%,75%)
+/items=("×")
+/color = (255,0,0)
+/fontstyle = ("Arial",10%,true)
+</text>
+
+<text attributeAleft>
+/items = attributeAlabel
+/valign = top
+/halign = left
+/position = (5%,5%)
+/txcolor = (0,255,0)
+</text>
+
+<text attributeBright>
+/items = attributeBlabel
+/valign = top
+/halign = right
+/position = (95%,5%)
+/txcolor = (0,255,0)
+</text>
+
+<text attributeAleftmixed>
+/items = attributeAlabel
+/valign = top
+/halign = left
+/position = (5%,19%)
+/txcolor = (0,255,0)
+</text>
+
+<text attributeBrightmixed>
+/items = attributeBlabel
+/valign = top
+/halign = right
+/position = (95%,19%)
+/txcolor = (0,255,0)
+</text>
+
+<text targetAleft>
+/items = targetAlabel
+/valign = top
+/halign = left
+/position = (5%,5%)
+/txcolor = (0,255,0)
+</text>
+
+<text targetAright>
+/items = targetAlabel
+/valign = top
+/halign = right
+/position = (95%,5%)
+/txcolor = (0,255,0)
+</text>
+
+<text targetBleft>
+/items = targetBlabel
+/valign = top
+/halign = left
+/position = (5%,5%)
+/txcolor = (0,255,0)
+</text>
+
+<text targetBright>
+/items = targetBlabel
+/valign = top
+/halign = right
+/position = (95%,5%)
+/txcolor = (0,255,0)
+</text>
+
+<text orleft>
+/items = ("或")
+/valign = top
+/halign = left
+/position = (5%,12%)
+/txcolor = (0,255,0)
+</text>
+
+<text orright>
+/items = ("或")
+/valign = top
+/halign = right
+/position = (95%,12%)
+/txcolor = (0,255,0)
+</text>
+
+<trial attributeA>
+/validresponse = ("E","I")
+/ correctresponse = ("E")
+/stimulusframes = [1=attributeA]
+/posttrialpause = 250
+</trial>
+
+<trial attributeB>
+/validresponse = ("E","I")
+/ correctresponse = ("I")
+/stimulusframes = [1=attributeB]
+/posttrialpause = 250
+</trial>
+
+<trial targetAleft>
+/validresponse = ("E","I")
+/ correctresponse = ("E")
+/stimulusframes = [1=targetA]
+/posttrialpause = 250
+</trial>
+
+<trial targetAright>
+/validresponse = ("E","I")
+/ correctresponse = ("I")
+/stimulusframes = [1=targetA]
+/posttrialpause = 250
+</trial>
+
+<trial targetBleft>
+/validresponse = ("E","I")
+/ correctresponse = ("E")
+/stimulusframes = [1=targetB]
+/posttrialpause = 250
+</trial>
+
+<trial targetBright>
+/validresponse = ("E","I")
+/ correctresponse = ("I")
+/stimulusframes = [1=targetB]
+/posttrialpause = 250
+</trial>
+
+<block attributepractice>
+/bgstim = (attributeAleft,attributeBright)
+/trials=[1=instructions;2-21=noreplace(attributeA,attributeB)]
+/errormessage = true(error,200)
+/responsemode = correct
+/recorddata = false
+</block>
+
+<block targetcompatiblepractice>
+/bgstim = (targetAleft,targetBright)
+/trials=[1=instructions;2-21=noreplace(targetAleft,targetBright)]
+/errormessage = true(error,200)
+/responsemode = correct
+/recorddata = false
+</block>
+
+
+<block targetincompatiblepractice>
+/bgstim = (targetAright,targetBleft)
+/trials=[1=instructions;2-21=noreplace(targetAright,targetBleft)]
+/errormessage = true(error,200)
+/responsemode = correct
+/recorddata = false
+</block>
+
+<block compatiblepractice>
+/bgstim = (targetAleft,orleft,attributeAleftmixed,targetBright,orright,attributeBrightmixed)
+/trials=[1=instructions;3,5,7,9,11,13,15,17,19,21=noreplace(targetAleft,targetBright);
+                         2,4,6,8,10,12,14,16,18,20=noreplace(attributeA,attributeB)]
+/errormessage = true(error,200)
+/responsemode = correct
+</block>
+
+<block incompatiblepractice>
+/bgstim = (targetBleft,orleft,attributeAleftmixed,targetAright,orright,attributeBrightmixed)
+/trials=[1=instructions;3,5,7,9,11,13,15,17,19,21=noreplace(targetBleft,targetAright);
+                         2,4,6,8,10,12,14,16,18,20=noreplace(attributeA,attributeB)]
+/errormessage = true(error,200)
+/responsemode = correct
+</block>
+
+<block compatibletestinstructions>
+/bgstim = (targetAleft,orleft,attributeAleftmixed,targetBright,orright,attributeBrightmixed)
+/trials = [1=instructions]
+/recorddata = false
+</block>
+
+<block compatibletest>
+/bgstim = (targetAleft,orleft,attributeAleftmixed,targetBright,orright,attributeBrightmixed)
+/trials = [
+2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40 = noreplace(targetAleft,targetBright);
+1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39 = noreplace(attributeA,attributeB)]
+/errormessage = true(error,200)
+/responsemode = correct
+</block>
+
+<block incompatibletestinstructions>
+/bgstim = (targetBleft,orleft,attributeAleftmixed,targetAright,orright,attributeBrightmixed)
+/trials = [1=instructions]
+/recorddata = false
+</block>
+
+<block incompatibletest>
+/bgstim = (targetBleft,orleft,attributeAleftmixed,targetAright,orright,attributeBrightmixed)
+/trials = [
+2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40 = noreplace(targetBleft,targetAright);
+1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39 = noreplace(attributeA,attributeB)]
+/errormessage = true(error,200)
+/responsemode = correct
+</block>
+
+<defaults>
+/screencolor = (0,0,0)
+/txbgcolor = (0,0,0)
+/txcolor = (255,255,255)
+/fontstyle = ("宋体",5%)
+</defaults>
+
+<expt >
+/ blocks = [1=attributepractice;2=block2;3=block3;4=block4;5=block5;
+6=block6;7=block7;8=block8;9=block9]
+/postinstructions = (summary)
+</expt>
+
+<variables>
+/ group = (1 of 2)(block2 = targetcompatiblepractice;
+block3 = compatiblepractice; block4=compatibletestinstructions;
+block5 = compatibletest; block6 = targetincompatiblepractice;
+block7 = incompatiblepractice; block8 = incompatibletestinstructions;
+block9 = incompatibletest)
+/ group = (2 of 2)(block2 = targetincompatiblepractice;
+block3 = incompatiblepractice; block4=incompatibletestinstructions;
+block5 = incompatibletest; block6 = targetcompatiblepractice;
+block7 = compatiblepractice; block8 = compatibletestinstructions;
+block9 = compatibletest)
+</variables> 
